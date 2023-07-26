@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Init.unity
-    guid: 3115e550cb15a4fd3ab3607db63fa429
+    path: Assets/Scenes/InitScene.unity
+    guid: f8c164aa84d4e4d62a05b415d0f25d7d
   - enabled: 1
     path: Assets/Scenes/OkiGenTest.unity
     guid: 67b8849e9c8be4cdeb95b8283f6d1989

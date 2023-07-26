@@ -65,7 +65,9 @@ public class PlayerController : MonoBehaviour
 
 //AnimationEvent
     public void PickUp()
-    {
+    {      
+        GameManager.Instance.FxManager.SpawnPickUpFx(target.transform.position);
+
         target.transform.SetParent(hand.solver.hand.transform);
         target.transform.localPosition = Vector3.zero;
         target.GetComponent<Rigidbody>().isKinematic = true;
@@ -73,7 +75,6 @@ public class PlayerController : MonoBehaviour
         DOTween.To(() => hand.solver.arm.armLengthMlp, x => hand.solver.arm.armLengthMlp = x, 1, .5f);
         DOTween.To(() => hand.solver.IKPositionWeight, x => hand.solver.IKPositionWeight = x, 0, .3f);
         DOTween.To(() => hand.solver.IKRotationWeight, x => hand.solver.IKRotationWeight = x, 0, .3f);
-        GameManager.Instance.FxManager.SpawnPickUpFx(target.transform.position);
     }
 
 //AnimationEvent
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour
                 rb.constraints = RigidbodyConstraints.FreezePositionY;
                 col.gameObject.layer = LayerMask.NameToLayer("PickupItem");
             });
-        GameManager.Instance.FxManager.SpawnPickUpFx(target.transform.position);
+        GameManager.Instance.FxManager.SpawnDropFx(target.transform.position);
         _isPickUp = false;
         target = null;
         GameManager.Instance.FxManager.SpawnFloatText(transform.position);
