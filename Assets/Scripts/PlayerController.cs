@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
                 rb.constraints = RigidbodyConstraints.FreezePositionY;
                 col.gameObject.layer = LayerMask.NameToLayer("PickupItem");
             });
-        GameManager.Instance.FxManager.SpawnDropFx(target.transform.position);
+        GameManager.Instance.FxManager.SpawnPickUpFx(target.transform.position);
         _isPickUp = false;
         target = null;
         GameManager.Instance.FxManager.SpawnFloatText(transform.position);
